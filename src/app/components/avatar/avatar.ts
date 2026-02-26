@@ -15,6 +15,7 @@ export class AvatarComponent {
   tipoExpresion = signal(1);
   nombre = signal("avatar")
   angulo = signal(0)
+  girara = signal(false)
 
   cambiarTamano(event: Event) {
     const input = event.target as HTMLInputElement
@@ -44,5 +45,9 @@ export class AvatarComponent {
   cambiarAngulo(evento: Event) {
     const input = evento.target as HTMLInputElement;
     this.angulo.set(parseInt(input.value));
+  }
+
+  girar() {
+    this.girara.update(gg => !gg)
   }
 }

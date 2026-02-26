@@ -8,7 +8,8 @@
         </div>
 
         <div class="cara" [style.background-color]="colorFondo()" [style.width.px]="tamano()"
-            [style.height.px]="tamano()" [style.transform]="'rotate(' + angulo() + 'deg)'">
+            [style.height.px]="tamano()" [style.transform]="'rotate(' + angulo() + 'deg)'"
+            [class.rotacion-suave]="girara()">
             <div class="ojos">
                 <div class="ojo"></div>
                 <div class="ojo"></div>
@@ -55,6 +56,9 @@
 
         <button (click)="toggleLentes()">
             {{ tieneLentes() ? 'Quitar lentes' : 'Poner lentes' }}
+        </button>
+        <button (click)="girar()">
+            {{ girara() ? 'PARAR a girar' : 'EMEPZAR de girar' }}
         </button>
     </div>
 
