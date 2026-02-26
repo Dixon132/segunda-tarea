@@ -13,7 +13,8 @@ export class AvatarComponent {
   tamano = signal(50);
   tieneLentes = signal(false);
   tipoExpresion = signal(1);
-
+  nombre = signal("avatar")
+  angulo = signal(0)
 
   cambiarTamano(event: Event) {
     const input = event.target as HTMLInputElement
@@ -33,5 +34,15 @@ export class AvatarComponent {
 
   }
 
+  cambiarNombre(nombre: string) {
+    this.nombre.set(nombre)
 
+  }
+
+
+
+  cambiarAngulo(evento: Event) {
+    const input = evento.target as HTMLInputElement;
+    this.angulo.set(parseInt(input.value));
+  }
 }
